@@ -1,0 +1,55 @@
+-vscode deer html turshih live server install hiine
+	extensions->live server->install
+-chocholatey.org->
+	install now->(powershell-admin deer huulna)Get-ExecutionPolicy
+	->Restricted(garch irwel)->Set-ExecutionPolicy AllSigned bichne
+	->Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) boloo
+-python
+	->choco install python
+	python dagaad pip suudag.pip ajilluulahdaa shineer powershell-admin neene
+-django
+		pip install Django
+-django project uusgene
+	->django-admin startproject maagii
+	->uussen folderoosoo open with code
+	->terminalaas py manage.py runserver->ctrl+click
+->views.py
+	from django.http import HttpResponse
+
+	def index(request):
+		return HttpResponse("Hello, world. You're at the polls index.")
+->urls.py
+	from django.urls import path
+	from . import views
+
+	urlpatterns = [
+		path('', views.index),
+	]
+->html huudas ashiglahiin tuld render hiine.
+	->templates hawtas uusgeed->settings.py deer install app burtguulne
+->db-ees ugugdul awchirahdaa models.py uusgeed
+	from django.db import models
+
+	class Person(models.Model):
+		first_name = models.CharField(max_length=30)
+		last_name = models.CharField(max_length=30)
+	->migrate hiine
+	->python manage.py makemigrations mandah
+	->py manage.py migrate
+	-->/choco install sqlitebrowser
+	->ugugdul nemchiheed views.py dr model oruulj irne
+	->from .models import Person
+		def index(request):
+			h=Person.objects.all()
+			return render(request,'index.html',{'person':h})
+	->html deeree {{person.0.first_name}} //neg data duudaj bn bugdiig n awah bol 
+	->dawtalt ashiglana
+	->	{% for z in person %}
+			<P>{{z.first_name}}</P>
+			<p>{{z.last_name}}</p>
+		{% endfor %}
+	
+	
+	
+	
+	
